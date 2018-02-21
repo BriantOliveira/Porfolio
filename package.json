@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Elliot's personal portfolio",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elliot Briant",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.33.4"
+  }
+}
