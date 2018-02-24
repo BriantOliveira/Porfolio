@@ -33,7 +33,40 @@ module.exports = function(app) {
         });
     });
 });
+/****************************************************
+* Login route
+*****************************************************/
 
+app.get('/login', (req, res) => {
+    // res.render('login')
+    res.send('LOGIN');
+});
 
+//Comparing if the given password is the same stored
+app.post('/login', (req, res) => {
+    console.log("email", req.body.email)
+    models.User.findOne({where: {email: req.body.email}}).then(function(data) {
+        bcrypt.compare(req.body.password, data.password, function(err, result) {
+            if(err) {
+                res.status(400)
+                console.log(err)
+            }
+            if(result) {
+                console.log("resulting results", result)
+                auth.setUserIDCookie(data, res);
+                res.redirect('/')
+            } else {
+                console.log('wrong username or password')
+            }
+        });
+    });
+});
 
-}
+/***************************************
+* Logout Route
+****************************************/
+app.get('/logout', function(req, res) {
+    res.clearCokie('jwtToken');
+    res.redirect('/')
+   });
+};
