@@ -76,7 +76,7 @@ app.use(express.static('./public'));
 //Load routes
 require('./controllers/index.js')(app);
 require('./controllers/user.js')(app);
-require('./controllers/signup.js')
+require('./controllers/signup.js')(app);
 
 
 //Listen on port number
