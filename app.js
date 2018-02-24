@@ -17,17 +17,17 @@ const PORT = process.env.PORT || 8080
 /****************************************************
  *  SQL Connection
  ***************************************************/
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize('atlasguideme', process.env.DBUSER, null, { dialect: 'postgres', logging: false });
+ const Sequelize = require('sequelize');
+ const sequelize = new Sequelize('portfolio', process.env.DBUSER, null, { dialect: 'postgres', logging: false });
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err.message);
-  });
+ sequelize
+   .authenticate()
+   .then(() => {
+     console.log('Connection has been established successfully.');
+   })
+   .catch(err => {
+     console.error('Unable to connect to the database:', err.message);
+   });
   /****************************************************
    *  Check for login token on every request
    ***************************************************/
@@ -71,7 +71,13 @@ app.set('view engine', 'hbs')
 //Setup handlebars view
 app.use(express.static('./public'));
 
+
+
 //Load routes
+require('./controllers/index.js')(app);
+require('./controllers/user.js')(app);
+require('./controllers/signup.js')
+
 
 //Listen on port number
 app.listen(PORT, function() {
