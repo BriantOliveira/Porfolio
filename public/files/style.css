@@ -109,7 +109,7 @@ p {
   margin-top: 46px;
   margin-bottom: 0px;
   padding-top: 0px;
-  background-image: url(../files/image/responsive-devices.png);
+  /* background-image: url(../files/image/views.png); */
   background-position: 50% 100%;
   background-size: contain;
   background-repeat: no-repeat;
