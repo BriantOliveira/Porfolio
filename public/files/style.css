@@ -106,13 +106,16 @@ p {
   bottom: 0px;
   display: block;
   min-height: 300px;
-  margin-top: 46px;
+  /* margin-top: 46px; */
   margin-bottom: 0px;
   padding-top: 0px;
-  /* background-image: url(../files/image/views.png); */
+  background-image: url(../files/image/HamsterWheelMock.png);
   background-position: 50% 100%;
   background-size: contain;
   background-repeat: no-repeat;
+  height: 360px;
+  z-index: -1;
+  margin-right: 410px;
 }
 .wite-center {
   color: white;
@@ -625,4 +628,22 @@ html.w-mod-js.w-mod-no-ios *[data-ix="popup-6"] {
   .serv {
     padding-bottom: 20px;
   }
+}
+
+.apple {
+  position: static;
+  /* left: 0px;
+  right: 0px;
+  bottom: 0px; */
+  /* display: block;
+  min-height: 300px;
+  margin-top: 46px;
+  margin-bottom: 0px;
+  padding-top: 0px; */
+  background-image: url(../files/image/app.png);
+  background-position: 50% 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  margin-left: 537px;
 }
